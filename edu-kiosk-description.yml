@@ -18,4 +18,5 @@
         - gimp
         - libreoffice
         - vlc
-
+    - name: Schedule description to be put in action at 9 AM every day
+      cron: name="Schedule main script" hour="9" job="sh /home/edu-admin/Github/elementary-os-kiosk-description/main.sh"
