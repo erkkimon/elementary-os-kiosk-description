@@ -11,5 +11,10 @@
     - name: Install basic software
       apt: name={{ item }} state=latest
       with_items:
-        - emacs
-        - unetbootin
+        - chromium-browser 
+        - blender
+        - preload
+        - vim
+        - gimp
+        - libreoffice
+        - vlc
