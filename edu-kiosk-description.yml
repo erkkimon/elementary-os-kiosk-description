@@ -1,7 +1,7 @@
 #jinja2:  variable_start_string: "[%" , variable_end_string: "%]"
 ---
 
-# usage: ansible-playbook hostname.yml -K
+# usage: ansible-playbook -i hosts edu-kiosk-description.yml 
 
 - hosts: 127.0.0.1
   connection: local
@@ -18,3 +18,4 @@
         - gimp
         - libreoffice
         - vlc
+        - cron-apt
