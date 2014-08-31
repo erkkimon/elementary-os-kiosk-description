@@ -6,8 +6,8 @@
 - hosts: 127.0.0.1
   connection: local
   tasks:
-    - name: Install Leafpad
-      apt: name=leafpad state=latest install_recommends=no
+    - name: Upgrade all packages
+      apt: upgrade=dist
     - name: Install basic software
       apt: name={{ item }} state=latest
       with_items:
@@ -18,4 +18,4 @@
         - gimp
         - libreoffice
         - vlc
-        - cron-apt
+
