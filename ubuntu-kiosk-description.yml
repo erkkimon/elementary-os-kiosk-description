@@ -1,0 +1,15 @@
+#jinja2:  variable_start_string: "[%" , variable_end_string: "%]"
+---
+
+# usage: ansible-playbook hostname.yml -K
+
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Install Leafpad
+      apt: name=leafpad state=latest install_recommends=no
+    - name: Install basic software
+      apt: name={{ item }} state=latest
+      with_items:
+        - emacs
+        - unetbootin
