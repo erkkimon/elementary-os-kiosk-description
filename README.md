@@ -1,0 +1,2 @@
+elementary-os-kiosk-description
+===============================
