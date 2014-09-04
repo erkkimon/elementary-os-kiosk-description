@@ -6,4 +6,5 @@
 
 # Fixme: Add random sleep here? Or maybe I should be run 10 mins after every boot?
 
+cd /home/edu-admin/Github/elementary-os-kiosk-description
 ansible-playbook -i hosts edu-kiosk-description.yml
