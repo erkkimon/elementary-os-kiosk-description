@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo apt-add-repository ppa:ansible/ansible
 sudo apt-get update
 sudo apt-get -y install git ansible
 mkdir /home/edu-admin/Github

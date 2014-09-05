@@ -6,9 +6,8 @@
 - hosts: 127.0.0.1
   connection: local
   tasks:
-# FIX THE CRONJOB
     - name: Set main.sh to be run at every boot
-      cron: name="Main script to be run at every boot" special_time="reboot" job="sh /home/edu-admin/Github/elementary-os-kiosk-description/main.sh"
+      cron: name="Main script to be run at every boot" special_time="reboot" job="bash /home/edu-admin/Github/elementary-os-kiosk-description/main.sh"
     - name: Upgrade all packages
       apt: upgrade=dist
     - name: Install basic software
@@ -23,8 +22,9 @@
         - vlc
         - ffmpeg
         - imagemagick
-        - firefox
-        - xine-ui
+        - openshot
+        - shutter
+        - tmux
 
 #    - name: Set main.sh to be run on every boot
 #      action: template src=templates/etc_rc.local dest=/etc/rc.local
