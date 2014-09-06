@@ -33,16 +33,15 @@
       file: path=/etc/guest-session/skel/.config/plank/dock1/launchers state=directory
 
     - name: Copy desired launchers for guest session from the repo
-      template: src=templates/etc_guest-session_skel_.config_plank_dock1_launchers_{{ item }}.dockitem dest=/etc/guest-session/skel/.config/plank/dock1/{{ item }}.dockitem 
+      template: src=templates/etc_guest-session_skel_.config_plank_dock1_launchers_{{ item }}.dockitem dest=/etc/guest-session/skel/.config/plank/dock1/launchers/{{ item }}.dockitem 
       with_items:
         - chromium-browser
         - gimp
         - google-drive
         - pantheon-files
-
     - name: Copy needed files to create a custom launcher for Google Drive
-      template: src=templates/usr_share_applications_google-drive.desktop dest=/usr/share/applications/google-drive.desktop 
-    - name: turkanen
+      copy: src=templates/usr_share_applications_google-drive.desktop dest=/usr/share/applications/google-drive.desktop 
+    - name: Copy the icon for Google Drive launcher
       copy: src=templates/usr_share_pixmaps_google-drive.png dest=/usr/share/pixmaps/google-drive.png
 #        - { path: 'usr_share_pixmaps_google-drive.png', dest: '/usr/share/pixmaps/google-drive.png' }
 
