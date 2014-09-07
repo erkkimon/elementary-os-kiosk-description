@@ -22,3 +22,9 @@ After this the system should be set up in the desired state. Some of the changes
 # Setting up the hardware
 
 In the repository there are ready-made scripts for setting up certain hardware, such as BCM4311 wireless adapter. The hardware-related scripts are located in *tools* folder. Just run the script, but remember that they don't ask you much &ndash; they just get the stuff done, and you run them at your own risk. So make sure you have read the scripts before running them.
+
+# Frequently Asked Questions
+
+**What to do? "E: Unable to lock the administration directory (var/lib/dpkg/), is another process using it?"**
+
+Don't panic. Probably your system is just automatically updating the package list. This happens usually at the first boot of the system, if the setup script is being run very soon after the system has got itself up. Just wait a few minutes and try again, then it should work.
