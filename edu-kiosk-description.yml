@@ -10,6 +10,8 @@
     - name: Set main.sh to be run at every boot
       cron: name="Main script to be run at every boot" special_time="reboot" job="bash /home/edu-admin/Github/elementary-os-kiosk-description/main.sh"
 
+    - name: Update the list of available packages (= apt-get update)
+      apt: update_cache=yes
     - name: Upgrade all packages
       apt: upgrade=dist
 
