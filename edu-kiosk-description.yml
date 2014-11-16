@@ -31,6 +31,13 @@
         - shutter
         - tmux
 
+    - name: Folder for mime settings to make Chromium default
+      file: path=/etc/guest-session/skel/.local/share/applications state=directory
+    - name: Make Chromium the default browser
+      copy: src=templates/etc_guest-session_skel_.local_share_applications_mimeapps.list dest=/etc/guest-session/skel/.local/share/applications/mimeapps.list
+    - name: Enable no-first-run and incognito for Chromium
+      copy: src=templates/usr_share_applications_chromium-browser.desktop dest=/usr/share/applications/chromium-browser.desktop
+
     - name: Disable crash notifications (Apport)
       copy: src=templates/etc_default_apport dest=/etc/default/apport
 
@@ -41,6 +48,9 @@
       file: path='/etc/guest-session/skel/.config/dconf' state=directory
     - name: Copy preferences for guest session such as set of launchers
       copy: src=templates/etc_guest-session_skel_.config_dconf_user dest=/etc/guest-session/skel/.config/dconf/user
+
+    - name: Copy LightDM settings file in its place
+      copy: src=templates/etc_lightdm_lightdm.conf dest=/etc/lightdm/lightdm.conf
 
 #    - name: Copy desired launchers for guest session from the repo
 #      template: src=templates/etc_guest-session_skel_.config_plank_dock1_launchers_{{ item }}.dockitem dest=/etc/guest-session/skel/.config/plank/dock1/launchers/{{ item }}.dockitem 
