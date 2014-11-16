@@ -31,11 +31,16 @@
         - shutter
         - tmux
 
-    - name: Disable problem notifications (Apport)
+    - name: Disable crash notifications (Apport)
       copy: src=templates/etc_default_apport dest=/etc/default/apport
 
     - name: Create directory for guest session
       file: path='/etc/guest-session' state=directory
+
+    - name: Create directory for guest session preferences
+      file: path='/etc/guest-session/skel/.config/dconf' state=directory
+    - name: Copy preferences for guest session such as set of launchers
+      copy: src=templates/etc_guest-session_skel_.config_dconf_user dest=/etc/guest-session/skel/.config/dconf/user
 
 #    - name: Copy desired launchers for guest session from the repo
 #      template: src=templates/etc_guest-session_skel_.config_plank_dock1_launchers_{{ item }}.dockitem dest=/etc/guest-session/skel/.config/plank/dock1/launchers/{{ item }}.dockitem 
@@ -45,8 +50,8 @@
 #        - google-drive
 #        - pantheon-files
 
-    - name: Set prefs.sh for guest session
-      copy: src='templates/etc_guest-session_prefs.sh' dest='/etc/guest-session/prefs.sh'
+#    - name: Set prefs.sh for guest session
+#      copy: src='templates/etc_guest-session_prefs.sh' dest='/etc/guest-session/prefs.sh'
 
     - name: Copy needed files to create a custom launcher for Google Drive
       copy: src=templates/usr_share_applications_google-drive.desktop dest=/usr/share/applications/google-drive.desktop 
