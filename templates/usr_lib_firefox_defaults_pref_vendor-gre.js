@@ -10,6 +10,9 @@ pref("network.manage-offline-status", true);
 // Disable password storing
 pref("signon.rememberSignons", false);
 
+// Prevent sites from suggesting extensions
+pref("xpinstall.enabled", false);
+
 // Map to hyphenation patterns from openoffice.org-hyphenation and openoffice.org-dictionaries
 pref("intl.hyphenation-alias.af", "af-za");
 pref("intl.hyphenation-alias.af-*", "af-za");
