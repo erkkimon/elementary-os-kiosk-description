@@ -31,12 +31,15 @@
         - shutter
         - tmux
 
-    - name: Folder for mime settings to make Chromium default
-      file: path=/etc/guest-session/skel/.local/share/applications state=directory
-    - name: Make Chromium the default browser
-      copy: src=templates/etc_guest-session_skel_.local_share_applications_mimeapps.list dest=/etc/guest-session/skel/.local/share/applications/mimeapps.list
-    - name: Enable no-first-run and incognito for Chromium
-      copy: src=templates/usr_share_applications_chromium-browser.desktop dest=/usr/share/applications/chromium-browser.desktop
+#    - name: Folder for mime settings to make Chromium default
+#      file: path=/etc/guest-session/skel/.local/share/applications state=directory
+#    - name: Make Chromium the default browser
+#      copy: src=templates/etc_guest-session_skel_.local_share_applications_mimeapps.list dest=/etc/guest-session/skel/.local/share/applications/mimeapps.list
+#    - name: Enable no-first-run and incognito for Chromium
+#      copy: src=templates/usr_share_applications_chromium-browser.desktop dest=/usr/share/applications/chromium-browser.desktop
+
+    - name: Copy file including Firefox preference overrides
+      copy: src=templates/usr_lib_firefox_defaults_pref_vendor-gre.js dest=/usr/lib/firefox/defaults/pref/vendor-gre.js
 
     - name: Disable crash notifications (Apport)
       copy: src=templates/etc_default_apport dest=/etc/default/apport
