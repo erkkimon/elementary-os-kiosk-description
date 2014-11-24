@@ -30,6 +30,7 @@
         - openshot
         - shutter
         - tmux
+        - irssi
 
 #    - name: Folder for mime settings to make Chromium default
 #      file: path=/etc/guest-session/skel/.local/share/applications state=directory
