@@ -71,7 +71,9 @@
       copy: src=templates/usr_share_applications_google-drive.desktop dest=/usr/share/applications/google-drive.desktop 
     - name: Copy the icon for Google Drive launcher
       copy: src=templates/usr_share_pixmaps_google-drive.png dest=/usr/share/pixmaps/google-drive.png
-#        - { path: 'usr_share_pixmaps_google-drive.png', dest: '/usr/share/pixmaps/google-drive.png' }
+
+    - name: Copy needed files to create a custom launcher for Volume_1
+      copy: src=templates/usr_share_applications_volume-1.desktop dest=/usr/share/applications/volume-1.desktop 
 
 #    - name: Set main.sh to be run on every boot
 #      action: template src=templates/etc_rc.local dest=/etc/rc.local
