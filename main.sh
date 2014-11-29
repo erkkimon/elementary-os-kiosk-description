@@ -15,4 +15,4 @@ cd /home/edu-admin/Github/elementary-os-kiosk-description
 git pull
 
 # Modify the kiosk according to the description using Ansible
-ansible-playbook -i /home/edu-admin/Github/elementary-os-kiosk-description/hosts /home/edu-admin/Github/elementary-os-kiosk-description/edu-kiosk-description.yml
+ansible-playbook -i /home/edu-admin/Github/elementary-os-kiosk-description/hosts /home/edu-admin/Github/elementary-os-kiosk-description/local.yml
