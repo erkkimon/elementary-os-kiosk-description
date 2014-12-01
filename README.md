@@ -30,4 +30,6 @@ In the repository there are ready-made scripts for setting up certain hardware, 
 Don't panic. Probably your system is just automatically updating the package list. This happens usually at the first boot of the system, if the setup script is being run very soon after the system has got itself up. Just wait a few minutes and try again, then it should work.
 
 # Temporary note
-@reboot export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/sbin && sleep 3m && ansible-pull -d /home/edu-admin/.ansible-pull-cache -U https://github.com/erkkimon/elementary-os-kiosk-description.git -i "localhost," > /home/edu-admin/ansible-log.txt
+```
+printf "@reboot root sleep 3m && ansible-pull -d /home/edu-admin/.ansible-pull-cache -U https://github.com/erkkimon/elementary-os-kiosk-description.git -i "localhost," > /home/edu-admin/ansible-log.txt\n\n" | sudo tee --append /etc/crontab
+```
