@@ -31,5 +31,10 @@ Don't panic. Probably your system is just automatically updating the package lis
 
 # Temporary note
 ```
-printf "@reboot root sleep 3m && ansible-pull -d /home/edu-admin/.ansible-pull-cache -U https://github.com/erkkimon/elementary-os-kiosk-description.git -i "localhost," > /home/edu-admin/ansible-log.txt\n\n" | sudo tee --append /etc/crontab
+sudo apt-get update &&
+sudo apt-get -y install git ansible &&
+printf "@reboot root sleep 3m && ansible-pull -d /home/edu-admin/.ansible-pull-cache -U https://github.com/erkkimon/elementary-os-kiosk-description.git -i \"localhost, \" > /home/edu-admin/ansible-log.txt\n\n" | sudo tee --append /etc/crontab &&
+sudo ansible-pull -d /home/edu-admin/.ansible-pull-cache -U https://github.com/erkkimon/elementary-os-kiosk-description.git -i "localhost," &&
+echo "Now the system matches the description and it's safe to reboot."
+
 ```
