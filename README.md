@@ -25,7 +25,7 @@ Linux-based computers are practically [virus-free](http://librenix.com/?inode=21
 
 The most realistic security risk is that a piece of installed software is vulnerable. Nevertheless, the system and all installed packages can be updated automatically as soon as there is a security update available, thanks to the package management system of Ubuntu (apt-get). So everything is up to date automatically.
 
-![Alt text](/../documentation/architecture.png?raw=true "Administrator doesn't need to interact with the nodes directly.")
+![Administrator doesn't need to interact with the nodes directly.](/../master/documentation/architecture.png?raw=true "Administrator doesn't need to interact with the nodes directly.")
 
 The set of installed packages and configuration files can be altered through editing a system description file. The node's system's desired state is declared in an Ansible playbook, which tells the node what packages should be installed, what packages should not be installed and how certain things should be configured. 
 
@@ -35,7 +35,7 @@ The administrator can alter system configuration or install new applications on 
 
 Everything outsourcable is outsourced. The description file is stored on Github, so there is no need to maintain a master server to rule the slaves. Files are stored in Google Drive, which makes a file server useless and frees administration resources to improving the infrastructure instead of only maintaining it.
 
-![Alt text](../documentation/kiosk-altering-process?raw=true "Administrator only needs updates definition file, nodes to the dirty work.")
+![Administrator only needs updates definition file, nodes to the dirty work.](/../master/documentation/kiosk-altering-process?raw=true "Administrator only needs updates definition file, nodes to the dirty work.")
 
 The nodes run standalone operating systems, so no human interaction or server connection are needed to login or to keep them up-to-date, and this increases the redundancy of the infrastructure. Users won't even notice if Github is down and the software updates are downloaded and installed anyway silently in the background. 
 
@@ -65,13 +65,13 @@ Ubuntu 14.04.1 Live environment on the kiosk machine and start the installation.
 ## Making the Computer Match the Description
 
 Do the installation in "next-next-next" style until the installation is ready and the system wants to reboot. When the kiosk computer has rebooted, run the following command. 
-´´´
+```
 sudo apt-get update &&
 sudo apt-get -y install git ansible &&
 printf "@reboot root sleep 3m && ansible-pull -d /home/edu-admin/.ansible-pull-cache -U https://github.com/erkkimon/elementary-os-kiosk-description.git -i \"localhost, \" > /home/edu-admin/ansible-log.txt\n\n" | sudo tee --append /etc/crontab &&
 sudo ansible-pull -d /home/edu-admin/.ansible-pull-cache -U https://github.com/erkkimon/elementary-os-kiosk-description.git -i "localhost," &&
 echo "Now the system matches the description and it's safe to reboot."
-´´´
+```
 
 Wait until the terminal says that it's safe to reboot. Now reboot and from that boot on, the computer should match the current description. It also should make sure that the node makes itself to match the description once the description is updated.
 
