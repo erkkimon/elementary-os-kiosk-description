@@ -35,7 +35,7 @@ The administrator can alter system configuration or install new applications on 
 
 Everything outsourcable is outsourced. The description file is stored on Github, so there is no need to maintain a master server to rule the slaves. Files are stored in Google Drive, which makes a file server useless and frees administration resources to improving the infrastructure instead of only maintaining it.
 
-![Administrator only needs updates definition file, nodes to the dirty work.](/../master/documentation/kiosk-altering-process?raw=true "Administrator only needs updates definition file, nodes to the dirty work.")
+![Administrator only needs updates definition file, nodes to the dirty work.](/../master/documentation/kiosk-altering-process.png?raw=true "Administrator only needs updates definition file, nodes to the dirty work.")
 
 The nodes run standalone operating systems, so no human interaction or server connection are needed to login or to keep them up-to-date, and this increases the redundancy of the infrastructure. Users won't even notice if Github is down and the software updates are downloaded and installed anyway silently in the background. 
 
