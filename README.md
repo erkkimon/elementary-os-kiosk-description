@@ -25,7 +25,7 @@ Linux-based computers are practically [virus-free](http://librenix.com/?inode=21
 
 The most realistic security risk is that a piece of installed software is vulnerable. Nevertheless, the system and all installed packages can be updated automatically as soon as there is a security update available, thanks to the package management system of Ubuntu (apt-get). So everything is up to date automatically.
 
-![Administrator doesn't need to interact with the nodes directly.](/../master/documentation/architecture.png?raw=true "Administrator doesn't need to interact with the nodes directly.")
+![Administrator does not need to interact with the nodes directly.](/../master/documentation/architecture.png?raw=true "Administrator doesn't need to interact with the nodes directly.")
 
 The set of installed packages and configuration files can be altered through editing a system description file. The node's system's desired state is declared in an Ansible playbook, which tells the node what packages should be installed, what packages should not be installed and how certain things should be configured. 
 
