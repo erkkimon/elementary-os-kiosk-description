@@ -2,7 +2,7 @@
 Version=1.0
 Name=Palautteet
 Comment=Auta uusien käyttöjärjestelmien räätälöinnissä antamalla ideoita ja raportoimalla ongelmista!
-Exec=firefox  
+Exec=firefox "https://docs.google.com/forms/d/15h1QGILpS-q57sNO1GPJgFq1Xdts0iDVcSzW__ls_K8/viewform?c=0&w=1" 
 Terminal=false
 X-MultipleArgs=false
 Type=Application
