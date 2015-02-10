@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=Ideat ja palautteet
+Comment=Auta uusien käyttöjärjestelmien räätälöinnissä antamalla ideoita ja raportoimalla ongelmista!
+Exec=firefox  
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=google-drive
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=true
+X-AppInstall-Package=firefox
+

@@ -52,6 +52,11 @@
     - name: Copy the icon for Google Drive launcher
       copy: src=templates/usr_share_pixmaps_google-drive.png dest=/usr/share/pixmaps/google-drive.png
 
+    - name: Copy needed files to create a custom launcher for feedback 
+      copy: src=templates/usr_share_applications_feedback.desktop dest=/usr/share/applications/feedback.desktop
+    - name: Copy the icon for feedback
+      copy: src=templates/usr_share_pixmaps_feedback.png dest=/usr/share/pixmaps/feedback.png
+
     - name: Copy needed files to create a custom launcher for Volume_1
       copy: src=templates/usr_share_applications_volume-1.desktop dest=/usr/share/applications/volume-1.desktop 
 
