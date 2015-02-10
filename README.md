@@ -81,6 +81,6 @@ Wait until the terminal says that it's safe to reboot. Now reboot and from that 
 
 Don't panic. Probably your system is just automatically updating the package list. This happens usually at the first boot of the system, if the setup script is being run very soon after the system has got itself up. Just wait a few minutes and try again, then it should work.
 
-**How to generate .config/dconf for guest session?**
+**How to generate .config/dconf/user for guest session?**
 
-Launch guest session. In /tmp there is a folder for guest session's home, which includes .config/dconf. Just do the changes you want and copy /tmp/*/.config/dconf.
+Launch guest session. In /tmp there is a folder for guest session's home, which includes .config/dconf/user. Just do the changes you want and copy /tmp/*/.config/dconf/user.
