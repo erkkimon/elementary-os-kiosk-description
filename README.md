@@ -84,3 +84,7 @@ Don't panic. Probably your system is just automatically updating the package lis
 **How to generate .config/dconf/user for guest session?**
 
 Launch guest session. In /tmp there is a folder for guest session's home, which includes .config/dconf/user. Just do the changes you want and copy /tmp/*/.config/dconf/user.
+
+**RANDOM TEMPORARY NOTES**
+```
+1       2       cron.daily      sudo ansible-pull -d /home/edu-admin/.ansible-pull-cache -U https://github.com/erkkimon/ubuntu-kiosk.git -i "localhost,"ojj```
